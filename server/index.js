@@ -11,6 +11,14 @@ const app = express();
 // cors policy
 app.use(cors());
 
+app.use(
+  cors({
+    origin: ["https://bookstore-ag7i.vercel.app/"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 // middleware for parsing req body
 app.use(express.json());
 
