@@ -32,14 +32,14 @@ const DeleteBook = () => {
     <div className="p-4">
       <BackButton />
 
-      <h1 className="tetxt-3xl my-4">Delete Book</h1>
+      <h1 className="text-3xl my-4">Delete Book</h1>
       {loading ? <Spinner /> : ""}
 
-      <div className="flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto">
-        <h3 className="text-2xl">Confirm Deletion</h3>
+      <div className="flex flex-col items-center justify-center bg-[#FFDB58]/50 rounded-xl w-[600px] p-8 mx-auto">
+        <h3 className="text-2xl font-semibold">Confirm Deletion</h3>
 
         <button
-          className="p-4 bg-red-400 text-white m-8 w-full"
+          className="p-4 bg-red-400 hover:bg-red-500 duration-200 ease-out text-white m-8 w-full font-semibold"
           onClick={handleDeleteBook}
         >
           Yes, Delete It

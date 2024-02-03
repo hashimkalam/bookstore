@@ -31,16 +31,16 @@ const Home = () => {
 
   return (
     <div className="p-4">
-      <div className="flex items-center justify-center gap-x-4">
+      <div className="flex items-center justify-center bg-red-300">
         <button
-          className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg"
+          className="bg-sky-300 hover:bg-sky-600 hover:text-white px-4 py-1 w-full border-r-2 border-slate-600"
           onClick={() => setShowType("table")}
         >
           Table
         </button>
 
         <button
-          className="bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg"
+          className="bg-sky-300 hover:bg-sky-600 hover:text-white px-4 py-1 w-full"
           onClick={() => setShowType("card")}
         >
           Card

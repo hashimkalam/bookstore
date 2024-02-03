@@ -39,7 +39,7 @@ const CreateBook = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 ">
       <BackButton />
 
       <h1 className="text-3xl my-4">Create Book</h1>
@@ -47,9 +47,9 @@ const CreateBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto">
+        <div className="flex flex-col bg-[#FFDB58]/50 rounded-xl w-[600px] p-4 mx-auto">
           <div className="my-4">
-            <label className="text-xl text-gray-500">Title</label>
+            <label className="text-xl">Title</label>
 
             <input
               type="text"
@@ -60,7 +60,7 @@ const CreateBook = () => {
           </div>
 
           <div className="my-4">
-            <label className="text-xl text-gray-500">Author</label>
+            <label className="text-xl">Author</label>
 
             <input
               type="text"
@@ -71,7 +71,7 @@ const CreateBook = () => {
           </div>
 
           <div className="my-4">
-            <label className="text-xl text-gray-500">Publish Year</label>
+            <label className="text-xl">Publish Year</label>
 
             <input
               type="text"
