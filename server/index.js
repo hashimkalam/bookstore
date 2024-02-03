@@ -1,7 +1,18 @@
 import express from "express";
+import mongoose from "mongoose";
+import { PORT, mongodbURL } from "./config.js";
+
+import cors from "cors";
+
+import booksRoute from "./routes/booksRoute.js";
 
 const app = express();
-const PORT = 5555;
+
+// cors policy
+app.use(cors());
+
+// middleware for parsing req body
+app.use(express.json());
 
 app.get("/", (req, res) => {
   console.log(req);
@@ -9,6 +20,16 @@ app.get("/", (req, res) => {
   return res.status(234).send("Hi i am hashim");
 });
 
-app.listen(PORT, () => {
-  console.log(`App is listening to port: ${PORT}`);
-});
+app.use("/books", booksRoute);
+
+mongoose
+  .connect(mongodbURL)
+  .then(() => {
+    console.log("app connected to database");
+    app.listen(PORT, () => {
+      console.log(`App is listening to port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
