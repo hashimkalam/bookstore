@@ -9,14 +9,16 @@ import DeleteBook from "./pages/DeleteBook";
 
 const App = () => {
   return (
-    <div className="bg-[#708090]/50 h-screen">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/books/create" element={<CreateBook />} />
-        <Route path="/books/details/:id" element={<ShowBook />} />
-        <Route path="/books/edit/:id" element={<EditBook />} />
-        <Route path="/books/delete/:id" element={<DeleteBook />} />
-      </Routes>
+    <div className="bg-[#708090]/50">
+      <div className="h-screen w-[80vw] mx-auto">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/books/create" element={<CreateBook />} />
+          <Route path="/books/details/:id" element={<ShowBook />} />
+          <Route path="/books/edit/:id" element={<EditBook />} />
+          <Route path="/books/delete/:id" element={<DeleteBook />} />
+        </Routes>
+      </div>
     </div>
   );
 };

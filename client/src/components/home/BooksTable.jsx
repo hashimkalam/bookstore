@@ -21,36 +21,40 @@ const BooksTable = ({ books }) => {
       </thead>
 
       <tbody>
-        {books.map((book, index) => (
-          <tr
-            key={book._id}
-            className="h-8 hover:bg-[#FFDB58]/75 rounded-xl duration-200 ease-in-out"
-          >
-            <td className="text-center">{index + 1}</td>
+        {books.length > 0 ? (
+          books.map((book, index) => (
+            <tr
+              key={book._id}
+              className="h-8 hover:bg-[#FFDB58]/75 rounded-xl duration-200 ease-in-out"
+            >
+              <td className="text-center">{index + 1}</td>
 
-            <td className=" text-center">{book.title}</td>
+              <td className=" text-center">{book.title}</td>
 
-            <td className=" text-center max-md:hidden">{book.author}</td>
+              <td className=" text-center max-md:hidden">{book.author}</td>
 
-            <td className="text-center max-md:hidden">{book.publishYear}</td>
+              <td className="text-center max-md:hidden">{book.publishYear}</td>
 
-            <td className="text-center ">
-              <div className="flex justify-center gap-x-4">
-                <Link to={`/books/details/${book._id}`}>
-                  <BsInfoCircle className="text-2xl text-green-800" />
-                </Link>
+              <td className="text-center ">
+                <div className="flex justify-center gap-x-4">
+                  <Link to={`/books/details/${book._id}`}>
+                    <BsInfoCircle className="text-2xl text-green-800" />
+                  </Link>
 
-                <Link to={`/books/edit/${book._id}`}>
-                  <AiOutlineEdit className="text-2xl text-yellow-600" />
-                </Link>
+                  <Link to={`/books/edit/${book._id}`}>
+                    <AiOutlineEdit className="text-2xl text-yellow-600" />
+                  </Link>
 
-                <Link to={`/books/delete/${book._id}`}>
-                  <MdOutlineDelete className="text-2xl text-red-600" />
-                </Link>
-              </div>
-            </td>
-          </tr>
-        ))}
+                  <Link to={`/books/delete/${book._id}`}>
+                    <MdOutlineDelete className="text-2xl text-red-600" />
+                  </Link>
+                </div>
+              </td>
+            </tr>
+          ))
+        ) : (
+          <div className="text-center w-full bg-red-400 py-3">Empty</div>
+        )}
       </tbody>
     </table>
   );
