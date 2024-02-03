@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: ["https://bookstore-ag7i.vercel.app/"],
+    origin: ["bookstore-vtgk.vercel.app"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
